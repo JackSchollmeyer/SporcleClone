@@ -1,6 +1,5 @@
 import { useState } from "react";
-import styles from "../../styles/Home.module.css";
-import Button from "../components/Button";
+import Button from "../components/commons/Button";
 
 export default function Home() {
   const [number, setNumber] = useState(50);
@@ -21,10 +20,10 @@ export default function Home() {
     number > 10 ? { color: "red", fontSize: "50px" } : {};
 
   return (
-    <div className={styles.container}>
+    <div>
       <div>
         <h1 style={isGreaterThanTen}>The number is {number}</h1>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div>
           <Button text={"subtract"} action={handleSubtract} />
           <Button text={"add"} action={handleAdd} />
         </div>
