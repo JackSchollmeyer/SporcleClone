@@ -1,0 +1,43 @@
+.authContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.img {
+  width: 70%;
+  height: auto;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case {
+  background-color: rgb(255, 255, 255);
+  float: right;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 600px;
+}
+
+.switch {
+  display: flex;
+  flex-direction: row;
+  color: rgb(144, 143, 145);
+  width: 500px;
+  column-gap: 20px;
+  margin-top: 64px;
+  font-size: 16px;
+}
+
+.switch p {
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../components/commons/Button";
+import s from "../../styles/Home.module.css";
 
 export default function Home() {
   const [number, setNumber] = useState(50);
@@ -21,6 +22,12 @@ export default function Home() {
 
   return (
     <div>
+      <div className={s.box}>
+        <div></div>
+        <div>
+          <div className={s.baby}></div>
+        </div>
+      </div>
       <div>
         <h1 style={isGreaterThanTen}>The number is {number}</h1>
         <div>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Image from "next/image";
+import pineTrees from "../public/pinetree.jpg";
 import Login from "../components/Auth/Login";
 import Signup from "../components/Auth/Signup";
-import Case from "../../styles/Case.module.css";
-import Navs from "../../styles/Navs.module.css";
-// import Background from "../../styles/Background.module.css";
+import s from "../../styles/Auth.module.css";
 
 export default function Auth() {
   const [showLogin, setShowLogin] = useState(0);
@@ -11,11 +11,14 @@ export default function Auth() {
   const handleToggle = (tab) => {
     setShowLogin(tab);
   };
+
   return (
-    <div>
-      {/* <img src="/styles/Background.back" /> */}
-      <div className={Case.case}>
-        <div className={Navs.switch}>
+    <div className={s.authContainer}>
+      <div className={s.img}>
+        <Image src={pineTrees} alt="Picture of the author" />
+      </div>
+      <div className={s.case}>
+        <div className={s.switch}>
           <p onClick={() => handleToggle(0)}>Login</p>
           <p onClick={() => handleToggle(1)}>Sign up</p>
         </div>
