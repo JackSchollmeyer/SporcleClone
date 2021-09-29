@@ -1,34 +1,36 @@
-import React from "react";
-import Inputs from "../../../../styles/Inputs.module.css";
+import React, { useState } from "react";
+import Input from "../../commons/input.jsx";
+import s from "../../../../styles/Auth.module.css";
 
 export default function Signup() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+
   return (
-    <div className={Inputs.title}>
-      <form className={Inputs.spacing}>
-        <label>
-          Name
-          <input className={Inputs.boxes}></input>
-        </label>
-      </form>
-      <form className={Inputs.spacing}>
-        <label>
-          Email
-          <input className={Inputs.boxes}></input>
-        </label>
-      </form>
-      <form className={Inputs.spacing}>
-        <label>
-          Password
-          <input className={Inputs.boxes}></input>
-        </label>
-      </form>
-      <form className={Inputs.spacing}>
-        <label>
-          Confirm Password
-          <input className={Inputs.boxes}></input>
-        </label>
-      </form>
-      <button className={Inputs.login}>Sign up</button>
+    <div className={s.title}>
+      <Input
+        label="Name"
+        value={name}
+        handleChange={(e) => setName(e.target.value)}
+      />
+      <Input
+        label="Email"
+        value={email}
+        handleChange={(e) => setEmail(e.target.value)}
+      />
+      <Input
+        label="Password"
+        value={password}
+        handleChange={(e) => setPassword(e.target.value)}
+      />
+      <Input
+        label="Confirm Password"
+        value={confirm}
+        handleChange={(e) => setConfirm(e.target.value)}
+      />
+      <button className={s.loginButton}>Sign Up</button>
     </div>
   );
 }
