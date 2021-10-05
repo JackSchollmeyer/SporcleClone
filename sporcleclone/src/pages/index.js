@@ -1,38 +1,44 @@
 import { useState } from "react";
-import Button from "../components/commons/Button";
-import s from "../../styles/Home.module.css";
+import s from "../../styles/Tickets.module.css";
+import { ArrowDownIcon, MinusIcon } from "@heroicons/react/outline";
 
-export default function Home() {
-  const [number, setNumber] = useState(50);
-
-  const handleAdd = () => {
-    setNumber(number + 1);
-  };
-
-  const handleSubtract = () => {
-    if (number <= 0) {
-      setNumber(100);
-    } else {
-      setNumber(number - 1);
-    }
-  };
-
-  const isGreaterThanTen =
-    number > 10 ? { color: "red", fontSize: "50px" } : {};
-
+export default function Tickets() {
   return (
-    <div>
-      <div className={s.box}>
-        <div></div>
-        <div>
-          <div className={s.baby}></div>
+    <div className={s.grid}>
+      <div className={s.boxes}>
+        <h3>Completed Quizzes</h3>
+        <div className={s.data}>
+          <p>
+            <span>0</span> from 0
+          </p>
+          <div className={s.percentage}>
+            <MinusIcon className={s.minusIcon} />
+            <p>0%</p>
+          </div>
         </div>
       </div>
-      <div>
-        <h1 style={isGreaterThanTen}>The number is {number}</h1>
-        <div>
-          <Button text={"subtract"} action={handleSubtract} />
-          <Button text={"add"} action={handleAdd} />
+      <div className={s.boxes}>
+        <h3>Erased Quizzes</h3>
+        <div className={s.data}>
+          <p>
+            <span>0</span> from 0
+          </p>
+          <div className={s.percentage}>
+            <MinusIcon className={s.minusIcon} />
+            <p>0%</p>
+          </div>
+        </div>
+      </div>
+      <div className={s.boxes}>
+        <h3>Quizzes</h3>
+        <div className={s.data}>
+          <p>
+            <span>122</span> from 129
+          </p>
+          <div className={s.percentage}>
+            <ArrowDownIcon className={s.downArrow} />
+            <p>5%</p>
+          </div>
         </div>
       </div>
     </div>
