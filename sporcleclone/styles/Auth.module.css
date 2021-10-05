@@ -59,11 +59,7 @@
 .switch p {
   cursor: pointer;
   position: relative;
-  padding-bottom: 4px;
-}
-
-.switchIsActive {
-  color: black;
+  padding-bottom: 1px;
 }
 
 .switch p::after {

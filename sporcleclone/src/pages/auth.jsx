@@ -8,6 +8,16 @@ import s from "../../styles/Auth.module.css";
 export default function Auth() {
   const [showLogin, setShowLogin] = useState(0);
 
+  const loginStyled =
+    showLogin === 0
+      ? { color: "black", borderBottom: "solid 3px" }
+      : { color: "rgb(144, 143, 145)" };
+
+  const singupStyled =
+    showLogin === 1
+      ? { color: "black", borderBottom: "solid 3px" }
+      : { color: "rgb(144, 143, 145)" };
+
   const handleToggle = (tab) => {
     setShowLogin(tab);
   };
@@ -19,8 +29,12 @@ export default function Auth() {
       </div>
       <div className={s.case}>
         <div className={s.switch}>
-          <p onClick={() => handleToggle(0)}>Login</p>
-          <p onClick={() => handleToggle(1)}>Sign up</p>
+          <p onClick={() => handleToggle(0)} style={loginStyled}>
+            Login
+          </p>
+          <p onClick={() => handleToggle(1)} style={singupStyled}>
+            Sign up
+          </p>
         </div>
         <div>
           {showLogin === 0 && <Login />}
