@@ -35,9 +35,9 @@ export default function Tickets() {
           <p>
             <span>122</span> from 129
           </p>
-          <div className={s.percentage}>
+          <div className={s.redPercentage}>
             <ArrowDownIcon className={s.downArrow} />
-            <p>5%</p>
+            <p>-5%</p>
           </div>
         </div>
       </div>
