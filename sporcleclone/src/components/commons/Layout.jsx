@@ -1,5 +1,6 @@
 import React from "react";
-// import avatar from "./avatar.jpg";
+import Image from "next/image";
+import avatar from "../../public/avatar.jpg";
 import s from "../../../styles/Layout.module.css";
 import { BellIcon } from "@heroicons/react/outline";
 
@@ -26,10 +27,12 @@ export default function Layout({ children }) {
         </div>
         <div className={s.navbarIcons}>
           <BellIcon className={s.bell} />
-          {/* <img src={avatar} className={s.avatar} /> */}
+          <div className={s.imageContainer}>
+            <Image src={avatar} />
+          </div>
         </div>
       </nav>
-      <main>{children}</main>
+      <main className={s.main}>{children}</main>
     </div>
   );
 }

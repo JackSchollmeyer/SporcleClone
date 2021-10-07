@@ -1,19 +1,16 @@
 .grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(240, 240, 240);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 16px;
 }
 
 .boxes {
-  width: 350px;
+  width: 100%;
   height: 125px;
   border-radius: 7px;
   background-color: white;
-  box-shadow: 2px 3px rgb(233, 233, 233);
+  box-shadow: 1px 2px rgb(238, 238, 238);
   font-family: "Arial Narrow", sans-serif;
   font-weight: bold;
 }
@@ -30,7 +27,7 @@
 }
 
 .data span {
-  color: rgb(90, 62, 192);
+  color: rgb(103, 75, 202);
   font-size: 32px;
   font-weight: bold;
 }
@@ -43,34 +40,21 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
-  background-color: rgb(242, 242, 242);
   border-radius: 50px;
   height: 25px;
   padding: 0 8px 0 8px;
-}
-
-.percentage p {
-  color: black;
-}
-
-.redPercentage {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  background-color: rgba(250, 168, 168, 0.3);
-  border-radius: 50px;
-  height: 25px;
-  padding: 0 8px 0 8px;
-}
-
-.redPercentage p {
-  color: rgb(153, 0, 0);
 }
 
 .downArrow {
   height: 20px;
   width: 20px;
   color: rgb(206, 38, 38);
+}
+
+.upArrow {
+  height: 20px;
+  width: 20px;
+  color: rgb(30, 204, 73);
 }
 
 .minusIcon {
