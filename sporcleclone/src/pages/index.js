@@ -16,9 +16,21 @@ export default function Tickets() {
   const quizStats = randomNumbers(150);
   const patientStats = randomNumbers(150);
 
-  // const percentage = Math.floor(
-  //   (completedStats.currentStat / completedStats.lastStat - 1) * 100
-  // );
+  const completedPercentage = Math.floor(
+    (completedStats.currentStat / completedStats.lastStat - 1) * 100
+  );
+
+  const erasedPercentage = Math.floor(
+    (erasedStats.currentStat / erasedStats.lastStat - 1) * 100
+  );
+
+  const quizPercentage = Math.floor(
+    (quizStats.currentStat / quizStats.lastStat - 1) * 100
+  );
+
+  const patientPercentage = Math.floor(
+    (patientStats.currentStat / patientStats.lastStat - 1) * 100
+  );
 
   return (
     <div className={s.grid}>
@@ -26,25 +38,25 @@ export default function Tickets() {
         title="Completed Quizzes"
         current={completedStats.currentStat}
         last={completedStats.lastStat}
-        change={percentage}
+        change={completedPercentage}
       />
       <CardStat
         title="Erased Quizzes"
         current={erasedStats.currentStat}
         last={erasedStats.lastStat}
-        change={}
+        change={erasedPercentage}
       />
       <CardStat
         title="Quizzes"
         current={quizStats.currentStat}
         last={quizStats.lastStat}
-        change={}
+        change={quizPercentage}
       />
       <CardStat
         title="Patient"
         current={patientStats.currentStat}
         last={patientStats.lastStat}
-        change={}
+        change={patientPercentage}
       />
     </div>
   );
