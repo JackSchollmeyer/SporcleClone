@@ -3,6 +3,7 @@ import Image from "next/image";
 import avatar from "../../public/avatar.jpg";
 import s from "../../../styles/Layout.module.css";
 import { BellIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 export default function Layout({ children }) {
   return (
@@ -12,16 +13,19 @@ export default function Layout({ children }) {
           <h2>Sporcle</h2>
           <ul>
             <li>
-              <a>Dashboard</a>
+              <Link href="/">
+                <a>Dashboard</a>
+              </Link>
             </li>
             <li>
-              <a>Team</a>
+              <Link href="/quizzes">
+                <a>Quizzes</a>
+              </Link>
             </li>
             <li>
-              <a>Projects</a>
-            </li>
-            <li>
-              <a>Calender</a>
+              <Link href="/profile">
+                <a>Profile</a>
+              </Link>
             </li>
           </ul>
         </div>
