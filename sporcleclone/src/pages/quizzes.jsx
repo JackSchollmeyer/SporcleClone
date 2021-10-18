@@ -1,5 +1,7 @@
 import React from "react";
 import { useTable } from "react-table";
+import { PencilIcon, UserRemoveIcon } from "@heroicons/react/outline";
+import s from "../../styles/Quizzes.module.css";
 
 function Table({ columns, data }) {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -9,29 +11,40 @@ function Table({ columns, data }) {
     });
 
   return (
-    <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
-              })}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className={s.tableContainer}>
+      <div className={s.tableCard}>
+        <table {...getTableProps()} className={s.table}>
+          {" "}
+          <thead className={s.headers}>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps()} className={s.tableTh}>
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}{" "}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row, i) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td {...cell.getCellProps()} className={s.tableTd}>
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 
@@ -629,7 +642,9 @@ export default function index() {
     () => [
       {
         Header: "Name",
-        accessor: "name",
+        accessor: (props) => {
+          return <div className={s.tableTdNames}>{props.name}</div>;
+        },
       },
       {
         Header: "Username",
@@ -638,6 +653,17 @@ export default function index() {
       {
         Header: "CreateDate",
         accessor: "createDate",
+      },
+      {
+        Header: " ",
+        accessor: () => {
+          return (
+            <div className={s.iconContainer}>
+              <UserRemoveIcon className={s.userRemoveIcon} />
+              <PencilIcon className={s.pencilIcon} />
+            </div>
+          );
+        },
       },
     ],
     []
